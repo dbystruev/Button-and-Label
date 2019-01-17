@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		698431D221F120B7000F53AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698431D121F120B7000F53AB /* AppDelegate.swift */; };
 		698431D921F120B9000F53AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698431D821F120B9000F53AB /* Assets.xcassets */; };
+		698431E421F133FF000F53AB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 698431E321F133FF000F53AB /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		698431D121F120B7000F53AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		698431D821F120B9000F53AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		698431DD21F120B9000F53AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		698431E321F133FF000F53AB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 		698431C521F120B6000F53AB = {
 			isa = PBXGroup;
 			children = (
+				698431E321F133FF000F53AB /* Default-568h@2x.png */,
 				698431D021F120B7000F53AB /* Button and Label */,
 				698431CF21F120B7000F53AB /* Products */,
 			);
@@ -114,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				698431D921F120B9000F53AB /* Assets.xcassets in Resources */,
+				698431E421F133FF000F53AB /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

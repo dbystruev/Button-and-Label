@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        label.font = .systemFont(ofSize: 40, weight: .medium)
         label.textAlignment = .center
         label.text = "\(count)"
         label.textColor = .yellow
@@ -41,8 +42,13 @@ class ViewController: UIViewController {
         
         button = UIButton(frame: CGRect(x: 0, y: 100, width: 100, height: 100))
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        button.setTitle("Нажми", for: .normal)
+        button.setTitle("Жми", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 40, weight: .medium)
         view.addSubview(button)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -55,17 +61,22 @@ class ViewController: UIViewController {
     }
     
     func updateUI(size: CGSize, doNotCount: Bool = false) {
-        print(#function, size, doNotCount, Date())
+        
+        let maxWidthView = [button, label].max { $0.frame.width < $1.frame.width }
+        let maxHeightView = [button, label].max { $0.frame.width < $1.frame.width }
+        
+        guard let maxWidth = maxWidthView?.frame.width else { return }
+        guard let maxHeight = maxHeightView?.frame.height else { return }
         
         let width = size.width
-        guard 100 < width else { return }
+        guard maxWidth < width else { return }
         
         let height = size.height
-        guard 100 < height else { return }
+        guard maxHeight < height else { return }
 
         func randomOrigin() -> CGPoint {
-            let x = CGFloat.random(in: 0...width - 100)
-            let y = CGFloat.random(in: 0...height - 100)
+            let x = CGFloat.random(in: 0...width - maxWidth)
+            let y = CGFloat.random(in: 0...height - maxHeight)
             
             return CGPoint(x: x, y: y)
         }
