@@ -61,7 +61,6 @@ class ViewController: UIViewController {
     }
     
     func updateUI(size: CGSize, doNotCount: Bool = false) {
-        
         let maxWidthView = [button, label].max { $0.frame.width < $1.frame.width }
         let maxHeightView = [button, label].max { $0.frame.width < $1.frame.width }
         
@@ -88,7 +87,6 @@ class ViewController: UIViewController {
             label.frame.origin = randomOrigin()
             
             loopCounter -= 1
-            
         } while button.frame.intersects(label.frame) && 0 < loopCounter
         
         if !doNotCount {
